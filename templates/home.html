@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'todolist/css/todo_home.css' %}"/>
+    <!-- <link rel="shortcut icon" type="image/jpg" href="{% static 'todolist/favicon.ico' %"/> -->
+    <title>Test Page</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Todo List Application</h1>
+        <a href="/create/" class="create_button"><input type="button" value="create"></a>
+        {% if data|length < 1 %}
+        <h2 class="status">Data masih kosong</h2>
+        {% else %}
+        <table border="1" class="table_data">
+            <tr>
+                <th>ID</th>
+                <td>Title</td>
+                <td>Description</td>
+                <td>Action</td>
+            </tr>
+            {% for datum in data%}
+            <tr>
+                <td>{{datum.id}}</td>
+                <td>{{datum.title}}</td>
+                <td>{{datum.description}}</td>
+                <td>
+                    <a href="/update/{{datum.id}}/"><input type="button" value="update" class="update"></a>
+                    <a href="/delete/{{datum.id}}/"><input type="button" value="delete" class="delete"></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+    </div>
+</body>
+</html>
