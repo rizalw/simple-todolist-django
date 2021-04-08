@@ -26,7 +26,7 @@ SECRET_KEY = 'hk6)_y7(%-9*(7n8(=2v!nq6md6@gzb_rmkkv-76=8qd3c8$ai'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['firstdjangoproject.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['firstdjangoprojectrizal.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
